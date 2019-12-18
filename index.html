@@ -1,26 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <meta charset="utf-8" />
+    <title>True or False Quiz</title>
 </head>
 <body>
-        <div id="main">
-        <div id="header">
-        <h1>JavaScript Quiz</h1>
+    <style>
+        body {
+            background-color: lightgrey;
+        }
+
+        #container {
+            border-radius: 8px;
+            background-color: white;
+            border: 5px solid black;
+            margin: auto;
+            margin-top: 50px;
+            height: 370px;
+            width: 400px;
+        }
+
+        .testButtons {
+            background-color: dodgerblue;
+            color: white;
+            width: 80px;
+            height: 40px;
+            border-radius: 5px;
+        }
+
+        .buttons {
+            background-color: steelblue;
+            color: white;
+            width: 80px;
+            height: 40px;
+            border-radius: 5px;
+        }
+
+        #quizdiv {
+            text-align: center;
+            font-size: large;
+            font-family: Arial, Helvetica, sans-serif;
+            color: black;
+        }
+    </style>
+    <div id="container">
+        <div id="quizdiv">
+            <h2>True Or False Quiz</h2><text>Question: <text id="number001">0</text></text><br />
+            <text>Score: <text id="score001">0</text></text><br />
+            <text>Time: <text id="time001">15</text></text><br />
+            <hr />
+            <div id="disappear">
+                <button class="buttons" onclick="begin()">Begin</button>
+            </div>
+            <p id="message1"></p>
+            <p id="message2"></p>
+            <p id="message3"></p>
+            <p id="message4"></p>
         </div>
-        
-        <h1>JavaScript Quiz</h1>
-        <p>Which is the best description of a variable?</p>
-        <p>Which is the best description of the substring method?</p>
-        <p>Which is the best description of concatenation?</p>
-        <p>Which is the best description of an if statement?</p>
-        
-        <p>Your grade is: <span id="grade">__</span></p>
-        <p id="grade2"></p>
-        </div>
-   
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
