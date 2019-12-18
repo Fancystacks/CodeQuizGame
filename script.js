@@ -26,6 +26,7 @@ var a = 0;
 a++;
 var b = 0;
 b++;
+var c = timer;
 
 function begin() {
   c = 15;
