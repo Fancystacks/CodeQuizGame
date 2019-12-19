@@ -11,22 +11,36 @@ var myQuestions = ["It is good practice to put a large JavaScript edit within an
   "An asterisk is jQuery's calling card."
 ];
 
-var option1 = ["<button class=testButtons onclick=q1i()>True</button><br /><br /><button class=testButtons onclick=q1c()>False</button>"];
-var option2 = ["<button class=testButtons onclick=q2c()>False</button><br /><br /><button class=testButtons onclick=q2i()>True</button>"];
-var option3 = ["<button class=testButtons onclick=q3c()>True</button><br /><br /><button class=testButtons onclick=q3i()>False</button>"];
-var option4 = ["<button class=testButtons onclick=q4i()>True</button><br /><br /><button class=testButtons onclick=q4c()>False</button>"];
-var option5 = ["<button class=testButtons onclick=q5c()>False</button><br /><br /><button class=testButtons onclick=q5i()>True</button>"];
-var option6 = ["<button class=testButtons onclick=q6i()>False</button><br /><br /><button class=testButtons onclick=q6c()>True</button>"];
-var option7 = ["<button class=testButtons onclick=q7c()>True</button><br /><br /><button class=testButtons onclick=q7i()>False</button>"];
-var option8 = ["<button class=testButtons onclick=q8c()>False</button><br /><br /><button class=testButtons onclick=q8i()>True</button>"];
-var option9 = ["<button class=testButtons onclick=q9c()>True</button><br /><br /><button class=testButtons onclick=q9i()>False</button>"];
-var option10 = ["<button class=testButtons onclick=q10i()>True</button><br /><br /><button class=testButtons onclick=q10c()>False</button>"];
+var option1 = ["<button class=testButtons onclick=qi()>True</button><br /><br /><button class=testButtons onclick=qc()>False</button>"];
+var option2 = ["<button class=testButtons onclick=qc()>False</button><br /><br /><button class=testButtons onclick=qi()>True</button>"];
+var option3 = ["<button class=testButtons onclick=qc()>True</button><br /><br /><button class=testButtons onclick=qi()>False</button>"];
+var option4 = ["<button class=testButtons onclick=qi()>True</button><br /><br /><button class=testButtons onclick=qc()>False</button>"];
+var option5 = ["<button class=testButtons onclick=qc()>False</button><br /><br /><button class=testButtons onclick=qi()>True</button>"];
+var option6 = ["<button class=testButtons onclick=qi()>False</button><br /><br /><button class=testButtons onclick=qc()>True</button>"];
+var option7 = ["<button class=testButtons onclick=qc()>True</button><br /><br /><button class=testButtons onclick=qi()>False</button>"];
+var option8 = ["<button class=testButtons onclick=qc()>False</button><br /><br /><button class=testButtons onclick=qi()>True</button>"];
+var option9 = ["<button class=testButtons onclick=qc()>True</button><br /><br /><button class=testButtons onclick=qi()>False</button>"];
+var option10 = ["<button class=testButtons onclick=qi()>True</button><br /><br /><button class=testButtons onclick=qc()>False</button>"];
 
 var a = 0;
 a++;
 var b = 0;
 b++;
 var c = timer;
+var previousScore = localStorage.getItem("Score");
+var previousInitials = localStorage.getItem("Initials");
+console.log(previousScore, previousInitials);
+
+if (!previousScore) {
+  previousScore = 0;
+}
+
+if (!previousInitials) {
+  previousInitials = '';
+}
+
+message1.innerHTML = "Previous user: " + previousInitials;
+message2.innerHTML = "Previous score: " + previousScore;
 
 function begin() {
   c = 15;
@@ -36,7 +50,7 @@ function begin() {
   number001.innerHTML = a++;
 }
 
-function q1c() {
+function qc() {
   window.clearInterval(update);
   c = "-";
   message3.innerHTML = "Correct";
@@ -45,160 +59,7 @@ function q1c() {
   message4.innerHTML = "<button class=buttons onclick=next()>Next</button>";
 }
 
-function q1i() {
-  window.clearInterval(update);
-  c = "-";
-  message3.innerHTML = "Incorrect";
-  message2.innerHTML = "";
-  message4.innerHTML = "<button class=buttons onclick=next()>Next</button>";
-}
-
-function q2c() {
-  window.clearInterval(update);
-  c = "-";
-  message3.innerHTML = "Correct";
-  message2.innerHTML = "";
-  score001.innerHTML = b++;
-  message4.innerHTML = "<button class=buttons onclick=next()>Next</button>";
-}
-
-function q2i() {
-  window.clearInterval(update);
-  c = "-";
-  message3.innerHTML = "Incorrect";
-  message2.innerHTML = "";
-  message4.innerHTML = "<button class=buttons onclick=next()>Next</button>";
-}
-
-function q3c() {
-  window.clearInterval(update);
-  c = "-";
-  message3.innerHTML = "Correct";
-  message2.innerHTML = "";
-  score001.innerHTML = b++;
-  message4.innerHTML = "<button class=buttons onclick=next()>Next</button>";
-}
-
-function q3i() {
-  window.clearInterval(update);
-  c = "-";
-  message3.innerHTML = "Incorrect";
-  message2.innerHTML = "";
-  message4.innerHTML = "<button class=buttons onclick=next()>Next</button>";
-}
-
-function q4c() {
-  window.clearInterval(update);
-  c = "-";
-  message3.innerHTML = "Correct";
-  message2.innerHTML = "";
-  score001.innerHTML = b++;
-  message4.innerHTML = "<button class=buttons onclick=next()>Next</button>";
-}
-
-function q4i() {
-  window.clearInterval(update);
-  c = "-";
-  message3.innerHTML = "Incorrect";
-  message2.innerHTML = "";
-  message4.innerHTML = "<button class=buttons onclick=next()>Next</button>";
-}
-
-function q5c() {
-  window.clearInterval(update);
-  c = "-";
-  message3.innerHTML = "Correct";
-  message2.innerHTML = "";
-  score001.innerHTML = b++;
-  message4.innerHTML = "<button class=buttons onclick=next()>Next</button>";
-}
-
-function q5i() {
-  window.clearInterval(update);
-  c = "-";
-  message3.innerHTML = "Incorrect";
-  message2.innerHTML = "";
-  message4.innerHTML = "<button class=buttons onclick=next()>Next</button>";
-}
-
-function q6c() {
-  window.clearInterval(update);
-  c = "-";
-  message3.innerHTML = "Correct";
-  message2.innerHTML = "";
-  score001.innerHTML = b++;
-  message4.innerHTML = "<button class=buttons onclick=next()>Next</button>";
-}
-
-function q6i() {
-  window.clearInterval(update);
-  c = "-";
-  message3.innerHTML = "Incorrect";
-  message2.innerHTML = "";
-  message4.innerHTML = "<button class=buttons onclick=next()>Next</button>";
-}
-
-function q7c() {
-  window.clearInterval(update);
-  c = "-";
-  message3.innerHTML = "Correct";
-  message2.innerHTML = "";
-  score001.innerHTML = b++;
-  message4.innerHTML = "<button class=buttons onclick=next()>Next</button>";
-}
-
-function q7i() {
-  window.clearInterval(update);
-  c = "-";
-  message3.innerHTML = "Incorrect";
-  message2.innerHTML = "";
-  message4.innerHTML = "<button class=buttons onclick=next()>Next</button>";
-}
-
-function q8c() {
-  window.clearInterval(update);
-  c = "-";
-  message3.innerHTML = "Correct";
-  message2.innerHTML = "";
-  score001.innerHTML = b++;
-  message4.innerHTML = "<button class=buttons onclick=next()>Next</button>";
-}
-
-function q8i() {
-  window.clearInterval(update);
-  c = "-";
-  message3.innerHTML = "Incorrect";
-  message2.innerHTML = "";
-  message4.innerHTML = "<button class=buttons onclick=next()>Next</button>";
-}
-
-function q9c() {
-  window.clearInterval(update);
-  c = "-";
-  message3.innerHTML = "Correct";
-  message2.innerHTML = "";
-  score001.innerHTML = b++;
-  message4.innerHTML = "<button class=buttons onclick=next()>Next</button>";
-}
-
-function q9i() {
-  window.clearInterval(update);
-  c = "-";
-  message3.innerHTML = "Incorrect";
-  message2.innerHTML = "";
-  message4.innerHTML = "<button class=buttons onclick=next()>Next</button>";
-}
-
-function q10c() {
-  window.clearInterval(update);
-  c = "-";
-  message3.innerHTML = "Correct";
-  message2.innerHTML = "";
-  score001.innerHTML = b++;
-  message4.innerHTML = "<button class=buttons onclick=next()>Next</button>";
-}
-
-function q10i() {
+function qi() {
   window.clearInterval(update);
   c = "-";
   message3.innerHTML = "Incorrect";
@@ -207,148 +68,15 @@ function q10i() {
 }
 
 function next() {
-  if (a == "2") {
+  if (parseInt(a) > 1 && parseInt(a) <= 9) {
     update = setInterval("timer()", 1000);
     c = 15;
     time001.innerHTML = 15;
-    message1.innerHTML = myQuestions[1];
+    message1.innerHTML = myQuestions[parseInt(a)-1];
     message2.innerHTML = option2;
     message3.innerHTML = "";
     number001.innerHTML = a++;
-
     message4.innerHTML = "";
-    if (c < 1) {
-      window.clearInterval(update);
-      message1.innerHTML = "Time's up!";
-      message2.innerHTML = "";
-      message3.innerHTML = "";
-      message4.innerHTML = "<button class=buttons onclick=next()>Next</button>";
-    }
-  }
-
-  else if (a == "3") {
-    update = setInterval("timer()", 1000);
-    c = 15;
-    time001.innerHTML = 15;
-    message1.innerHTML = myQuestions[2];
-    message2.innerHTML = option3;
-    message3.innerHTML = "";
-    number001.innerHTML = a++;
-    message4.innerHTML = "";
-    if (c < 1) {
-      window.clearInterval(update);
-      message1.innerHTML = "Time's up!";
-      message2.innerHTML = "";
-      message3.innerHTML = "";
-      message4.innerHTML = "<button class=buttons onclick=next()>Next</button>";
-    }
-  }
-
-  else if (a == "4") {
-    update = setInterval("timer()", 1000);
-    c = 15;
-    time001.innerHTML = 15;
-    message1.innerHTML = myQuestions[3];
-    message2.innerHTML = option4;
-    message3.innerHTML = "";
-    number001.innerHTML = a++;
-    message4.innerHTML = "";
-
-    if (c < 1) {
-      window.clearInterval(update);
-      message1.innerHTML = "Time's up!";
-      message2.innerHTML = "";
-      message3.innerHTML = "";
-      message4.innerHTML = "<button class=buttons onclick=next()>Next</button>";
-    }
-  }
-
-  else if (a == "5") {
-    update = setInterval("timer()", 1000);
-    c = 15;
-    time001.innerHTML = 15;
-    message1.innerHTML = myQuestions[4];
-    message2.innerHTML = option5;
-    message3.innerHTML = "";
-    number001.innerHTML = a++;
-    message4.innerHTML = "";
-
-    if (c < 1) {
-      window.clearInterval(update);
-      message1.innerHTML = "Time's up!";
-      message2.innerHTML = "";
-      message3.innerHTML = "";
-      message4.innerHTML = "<button class=buttons onclick=next()>Next</button>";
-    }
-  }
-
-  else if (a == "6") {
-    update = setInterval("timer()", 1000);
-    c = 15;
-    time001.innerHTML = 15;
-    message1.innerHTML = myQuestions[5];
-    message2.innerHTML = option6;
-    message3.innerHTML = "";
-    number001.innerHTML = a++;
-    message4.innerHTML = "";
-
-    if (c < 1) {
-      window.clearInterval(update);
-      message1.innerHTML = "Time's up!";
-      message2.innerHTML = "";
-      message3.innerHTML = "";
-      message4.innerHTML = "<button class=buttons onclick=next()>Next</button>";
-    }
-  }
-
-  else if (a == "7") {
-    update = setInterval("timer()", 1000);
-    c = 15;
-    time001.innerHTML = 15;
-    message1.innerHTML = myQuestions[6];
-    message2.innerHTML = option7;
-    message3.innerHTML = "";
-    number001.innerHTML = a++;
-    message4.innerHTML = "";
-
-    if (c < 1) {
-      window.clearInterval(update);
-      message1.innerHTML = "Time's up!";
-      message2.innerHTML = "";
-      message3.innerHTML = "";
-      message4.innerHTML = "<button class=buttons onclick=next()>Next</button>";
-    }
-  }
-
-  else if (a == "8") {
-    update = setInterval("timer()", 1000);
-    c = 15;
-    time001.innerHTML = 15;
-    message1.innerHTML = myQuestions[7];
-    message2.innerHTML = option8;
-    message3.innerHTML = "";
-    number001.innerHTML = a++;
-    message4.innerHTML = "";
-
-    if (c < 1) {
-      window.clearInterval(update);
-      message1.innerHTML = "Time's up!";
-      message2.innerHTML = "";
-      message3.innerHTML = "";
-      message4.innerHTML = "<button class=buttons onclick=next()>Next</button>";
-    }
-  }
-
-  else if (a == "9") {
-    update = setInterval("timer()", 1000);
-    c = 15;
-    time001.innerHTML = 15;
-    message1.innerHTML = myQuestions[8];
-    message2.innerHTML = option9;
-    message3.innerHTML = "";
-    number001.innerHTML = a++;
-    message4.innerHTML = "";
-    
     if (c < 1) {
       window.clearInterval(update);
       message1.innerHTML = "Time's up!";
@@ -374,6 +102,13 @@ function next() {
     message2.innerHTML = "";
     message3.innerHTML = "";
     message4.innerHTML = "<button class=buttons onclick=repeat001()>Repeat</button>";
+
+    var initials = prompt("Please enter your initials.")
+    console.log(initials);
+    console.log(score001.innerHTML);
+
+    localStorage.setItem("Score", score001.innerHTML);
+    localStorage.setItem("Initials", initials);
   }
 }
 
