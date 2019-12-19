@@ -215,6 +215,7 @@ function next() {
     message2.innerHTML = option2;
     message3.innerHTML = "";
     number001.innerHTML = a++;
+
     message4.innerHTML = "";
     if (c < 1) {
       window.clearInterval(update);
@@ -252,6 +253,7 @@ function next() {
     message3.innerHTML = "";
     number001.innerHTML = a++;
     message4.innerHTML = "";
+
     if (c < 1) {
       window.clearInterval(update);
       message1.innerHTML = "Time's up";
@@ -270,6 +272,7 @@ function next() {
     message3.innerHTML = "";
     number001.innerHTML = a++;
     message4.innerHTML = "";
+
     if (c < 1) {
       window.clearInterval(update);
       message1.innerHTML = "Time's up";
@@ -288,6 +291,7 @@ function next() {
     message3.innerHTML = "";
     number001.innerHTML = a++;
     message4.innerHTML = "";
+
     if (c < 1) {
       window.clearInterval(update);
       message1.innerHTML = "Time's up";
@@ -306,6 +310,7 @@ function next() {
     message3.innerHTML = "";
     number001.innerHTML = a++;
     message4.innerHTML = "";
+
     if (c < 1) {
       window.clearInterval(update);
       message1.innerHTML = "Time's up";
@@ -324,6 +329,7 @@ function next() {
     message3.innerHTML = "";
     number001.innerHTML = a++;
     message4.innerHTML = "";
+
     if (c < 1) {
       window.clearInterval(update);
       message1.innerHTML = "Time's up";
@@ -342,6 +348,7 @@ function next() {
     message3.innerHTML = "";
     number001.innerHTML = a++;
     message4.innerHTML = "";
+    
     if (c < 1) {
       window.clearInterval(update);
       message1.innerHTML = "Time's up";
