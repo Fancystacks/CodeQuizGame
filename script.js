@@ -1,14 +1,14 @@
 
-var myQuestions = ["There are 9 continents in the world.",
-  "There is no islands on Earth.",
-  "Blue whales are mammals.",
-  "Tomatoes are vegetables.",
-  "The Blue Whale feeds on Tuna fish.",
-  "Fifa World Cup tournaments are played every 4 years.",
-  "The north side of the Equator Line has more countries than the south side.",
-  "Madagascar is the largest island in the world.",
-  "Helium is the lightest gas element out of all gas elements.",
-  "The hottest planet in the solar system is Mercury."
+var myQuestions = ["It is good practice to put a large JavaScript edit within an HTML document.",
+  "HTML stands for Hypertext Markdown Language.",
+  "CSS is used to style and design HTML content.",
+  "Local storage can only hold arrays and objects.",
+  "Vanilla JavaScript is the same thing as jQuery.",
+  "An boolean is an example of a data type in JavaScript.",
+  "JavaScript is the de facto language of the web.",
+  "All HTML components need a seperate closing tag.",
+  "!false actually means true.",
+  "An asterisk is jQuery's calling card."
 ];
 
 var option1 = ["<button class=testButtons onclick=q1i()>True</button><br /><br /><button class=testButtons onclick=q1c()>False</button>"];
@@ -184,7 +184,7 @@ function q9c() {
 function q9i() {
   window.clearInterval(update);
   c = "-";
-  message3.innerHTML = "Incorrect. Helium is the lightest gas of all gas elements.";
+  message3.innerHTML = "Incorrect";
   message2.innerHTML = "";
   message4.innerHTML = "<button class=buttons onclick=next()>Next</button>";
 }
@@ -192,7 +192,7 @@ function q9i() {
 function q10c() {
   window.clearInterval(update);
   c = "-";
-  message3.innerHTML = "Correct. Venus is the hottest planet. That is because its atmosphere contains 95% of Carbon dioxide.";
+  message3.innerHTML = "Correct";
   message2.innerHTML = "";
   score001.innerHTML = b++;
   message4.innerHTML = "<button class=buttons onclick=next()>Next</button>";
@@ -201,7 +201,7 @@ function q10c() {
 function q10i() {
   window.clearInterval(update);
   c = "-";
-  message3.innerHTML = "Incorrect. Venus is the hottest planet. That is because its atmosphere contains 95% of Carbon dioxide.";
+  message3.innerHTML = "Incorrect";
   message2.innerHTML = "";
   message4.innerHTML = "<button class=buttons onclick=next()>Next</button>";
 }
@@ -219,7 +219,7 @@ function next() {
     message4.innerHTML = "";
     if (c < 1) {
       window.clearInterval(update);
-      message1.innerHTML = "Time's up";
+      message1.innerHTML = "Time's up!";
       message2.innerHTML = "";
       message3.innerHTML = "";
       message4.innerHTML = "<button class=buttons onclick=next()>Next</button>";
@@ -237,7 +237,7 @@ function next() {
     message4.innerHTML = "";
     if (c < 1) {
       window.clearInterval(update);
-      message1.innerHTML = "Time's up";
+      message1.innerHTML = "Time's up!";
       message2.innerHTML = "";
       message3.innerHTML = "";
       message4.innerHTML = "<button class=buttons onclick=next()>Next</button>";
@@ -256,7 +256,7 @@ function next() {
 
     if (c < 1) {
       window.clearInterval(update);
-      message1.innerHTML = "Time's up";
+      message1.innerHTML = "Time's up!";
       message2.innerHTML = "";
       message3.innerHTML = "";
       message4.innerHTML = "<button class=buttons onclick=next()>Next</button>";
@@ -275,7 +275,7 @@ function next() {
 
     if (c < 1) {
       window.clearInterval(update);
-      message1.innerHTML = "Time's up";
+      message1.innerHTML = "Time's up!";
       message2.innerHTML = "";
       message3.innerHTML = "";
       message4.innerHTML = "<button class=buttons onclick=next()>Next</button>";
@@ -294,7 +294,7 @@ function next() {
 
     if (c < 1) {
       window.clearInterval(update);
-      message1.innerHTML = "Time's up";
+      message1.innerHTML = "Time's up!";
       message2.innerHTML = "";
       message3.innerHTML = "";
       message4.innerHTML = "<button class=buttons onclick=next()>Next</button>";
@@ -313,7 +313,7 @@ function next() {
 
     if (c < 1) {
       window.clearInterval(update);
-      message1.innerHTML = "Time's up";
+      message1.innerHTML = "Time's up!";
       message2.innerHTML = "";
       message3.innerHTML = "";
       message4.innerHTML = "<button class=buttons onclick=next()>Next</button>";
@@ -332,7 +332,7 @@ function next() {
 
     if (c < 1) {
       window.clearInterval(update);
-      message1.innerHTML = "Time's up";
+      message1.innerHTML = "Time's up!";
       message2.innerHTML = "";
       message3.innerHTML = "";
       message4.innerHTML = "<button class=buttons onclick=next()>Next</button>";
@@ -351,7 +351,7 @@ function next() {
     
     if (c < 1) {
       window.clearInterval(update);
-      message1.innerHTML = "Time's up";
+      message1.innerHTML = "Time's up!";
       message2.innerHTML = "";
       message3.innerHTML = "";
       message4.innerHTML = "<button class=buttons onclick=next()>Next</button>";
@@ -385,7 +385,7 @@ function timer() {
 
   if (c < 1) {
     window.clearInterval(update);
-    message1.innerHTML = "Time's up";
+    message1.innerHTML = "Time's up!";
     message2.innerHTML = "";
     message3.innerHTML = "";
     message4.innerHTML = "<button class=buttons onclick=next()>Next</button>";
