@@ -29,8 +29,8 @@ b++;
 var c = timer;
 var previousScore = localStorage.getItem("Score");
 var previousInitials = localStorage.getItem("Initials");
-console.log(previousScore, previousInitials);
 
+// controls display of previous user's initials and score
 if (!previousScore) {
   previousScore = 0;
 }
@@ -42,20 +42,22 @@ if (!previousInitials) {
 message1.innerHTML = "Previous user: " + previousInitials;
 message2.innerHTML = "Previous score: " + previousScore;
 
+// start of the quiz
 function begin() {
   c = 15;
   disappear.innerHTML = "";
   message1.innerHTML = myQuestions[0];
   message2.innerHTML = option1;
-  number001.innerHTML = a++;
+  questionNumber.innerHTML = a++;
 }
 
+// first question appears and quiz starts
 function qc() {
   window.clearInterval(update);
   c = "-";
   message3.innerHTML = "Correct";
   message2.innerHTML = "";
-  score001.innerHTML = b++;
+  userScore.innerHTML = b++;
   message4.innerHTML = "<button class=buttons onclick=next()>Next</button>";
 }
 
@@ -71,11 +73,11 @@ function next() {
   if (parseInt(a) > 1 && parseInt(a) <= 9) {
     update = setInterval("timer()", 1000);
     c = 15;
-    time001.innerHTML = 15;
+    timeLeft.innerHTML = 15;
     message1.innerHTML = myQuestions[parseInt(a)-1];
     message2.innerHTML = option2;
     message3.innerHTML = "";
-    number001.innerHTML = a++;
+    questionNumber.innerHTML = a++;
     message4.innerHTML = "";
     if (c < 1) {
       window.clearInterval(update);
@@ -89,11 +91,11 @@ function next() {
   else if (a == "10") {
     update = setInterval("timer()", 1000);
     c = 15;
-    time001.innerHTML = 15;
+    timeLeft.innerHTML = 15;
     message1.innerHTML = myQuestions[9];
     message2.innerHTML = option10;
     message3.innerHTML = "";
-    number001.innerHTML = a++;
+    questionNumber.innerHTML = a++;
     message4.innerHTML = "";
   } else {
     window.clearInterval(update);
@@ -105,9 +107,9 @@ function next() {
 
     var initials = prompt("Please enter your initials.")
     console.log(initials);
-    console.log(score001.innerHTML);
+    console.log(userScore.innerHTML);
 
-    localStorage.setItem("Score", score001.innerHTML);
+    localStorage.setItem("Score", userScore.innerHTML);
     localStorage.setItem("Initials", initials);
   }
 }
@@ -115,7 +117,7 @@ function next() {
 function timer() {
   c = c - 1;
   if (c < 150) {
-    time001.innerHTML = c;
+    timeLeft.innerHTML = c;
   }
 
   if (c < 1) {
