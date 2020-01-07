@@ -1,34 +1,47 @@
-
-var myQuestions = ["It is good practice to put a large JavaScript edit within an HTML document.",
-  "HTML stands for Hypertext Markdown Language.",
-  "CSS is used to style and design HTML content.",
-  "Local storage can only hold arrays and objects.",
-  "Vanilla JavaScript is the same thing as jQuery.",
-  "An boolean is an example of a data type in JavaScript.",
-  "JavaScript is the de facto language of the web.",
-  "All HTML components need a seperate closing tag.",
-  "!false actually means true.",
-  "An asterisk is jQuery's calling card."
-];
-
-var option1 = ["<button class=testButtons onclick=qi()>True</button><br /><br /><button class=testButtons onclick=qc()>False</button>"];
-var option2 = ["<button class=testButtons onclick=qc()>False</button><br /><br /><button class=testButtons onclick=qi()>True</button>"];
-var option3 = ["<button class=testButtons onclick=qc()>True</button><br /><br /><button class=testButtons onclick=qi()>False</button>"];
-var option4 = ["<button class=testButtons onclick=qi()>True</button><br /><br /><button class=testButtons onclick=qc()>False</button>"];
-var option5 = ["<button class=testButtons onclick=qc()>False</button><br /><br /><button class=testButtons onclick=qi()>True</button>"];
-var option6 = ["<button class=testButtons onclick=qi()>False</button><br /><br /><button class=testButtons onclick=qc()>True</button>"];
-var option7 = ["<button class=testButtons onclick=qc()>True</button><br /><br /><button class=testButtons onclick=qi()>False</button>"];
-var option8 = ["<button class=testButtons onclick=qc()>False</button><br /><br /><button class=testButtons onclick=qi()>True</button>"];
-var option9 = ["<button class=testButtons onclick=qc()>True</button><br /><br /><button class=testButtons onclick=qi()>False</button>"];
-var option10 = ["<button class=testButtons onclick=qi()>True</button><br /><br /><button class=testButtons onclick=qc()>False</button>"];
+var myQuestionsAnswers = [
+  {
+    question: "It is good practice to put a large JavaScript edit within an HTML document.",
+    option: "<button class=testButtons onclick=qi()>True</button><br /><br /><button class=testButtons onclick=qc()>Falsec1</button>"
+  }, {
+    question: "HTML stands for Hypertext Markdown Language.",
+    option: "<button class=testButtons onclick=qc()>Falsec2</button><br /><br /><button class=testButtons onclick=qi()>True</button>"
+  }, {
+    question: "CSS is used to style and design HTML content.",
+    option: "<button class=testButtons onclick=qc()>Truec3</button><br /><br /><button class=testButtons onclick=qi()>False</button>"
+  }, {
+    question: "Local storage can only hold arrays and objects.",
+    option: "<button class=testButtons onclick=qi()>True</button><br /><br /><button class=testButtons onclick=qc()>Falsec4</button>"
+  }, {
+    question: "Vanilla JavaScript is the same thing as jQuery.",
+    option: "<button class=testButtons onclick=qc()>Falsec5</button><br /><br /><button class=testButtons onclick=qi()>True</button>"
+  }, {
+    question: "An boolean is an example of a data type in JavaScript.",
+    option: "<button class=testButtons onclick=qi()>False</button><br /><br /><button class=testButtons onclick=qc()>Truec6</button>"
+  }, {
+    question: "JavaScript is the de facto language of the web.",
+    option: "<button class=testButtons onclick=qc()>Truec7</button><br /><br /><button class=testButtons onclick=qi()>False</button>"
+  }, {
+    question: "All HTML components need a seperate closing tag.",
+    option: "<button class=testButtons onclick=qc()>Falsec8</button><br /><br /><button class=testButtons onclick=qi()>True</button>"
+  }, {
+    question: "!false actually means true.",
+    option: "<button class=testButtons onclick=qc()>Truec9</button><br /><br /><button class=testButtons onclick=qi()>False</button>"
+  }, {
+    question: "An asterisk is jQuery's calling card.",
+    option: "<button class=testButtons onclick=qi()>Truec10</button><br /><br /><button class=testButtons onclick=qc()>False</button>"
+  }
+]
 
 var a = 0;
+console.log(a);
 a++;
+console.log(a);
 var b = 0;
 b++;
 var c = timer;
 var previousScore = localStorage.getItem("Score");
 var previousInitials = localStorage.getItem("Initials");
+var topScores = JSON.parse(localStorage.getItem("topScores"));
 
 // controls display of previous user's initials and score
 if (!previousScore) {
@@ -44,10 +57,11 @@ message2.innerHTML = "Previous score: " + previousScore;
 
 // start of the quiz
 function begin() {
+  console.log(a);
   c = 15;
   disappear.innerHTML = "";
-  message1.innerHTML = myQuestions[0];
-  message2.innerHTML = option1;
+  message1.innerHTML = myQuestionsAnswers[0].question;
+  message2.innerHTML = myQuestionsAnswers[0].option;
   questionNumber.innerHTML = a++;
 }
 
@@ -70,12 +84,13 @@ function qi() {
 }
 
 function next() {
-  if (parseInt(a) > 1 && parseInt(a) <= 9) {
+  console.log(a)
+  if (parseInt(a) >= 1 && parseInt(a) <= 9) {
     update = setInterval("timer()", 1000);
     c = 15;
     timeLeft.innerHTML = 15;
-    message1.innerHTML = myQuestions[parseInt(a)-1];
-    message2.innerHTML = option2;
+    message1.innerHTML = myQuestionsAnswers[parseInt(a)-1].question;
+    message2.innerHTML = myQuestionsAnswers[parseInt(a)-1].option;
     message3.innerHTML = "";
     questionNumber.innerHTML = a++;
     message4.innerHTML = "";
@@ -92,8 +107,8 @@ function next() {
     update = setInterval("timer()", 1000);
     c = 15;
     timeLeft.innerHTML = 15;
-    message1.innerHTML = myQuestions[9];
-    message2.innerHTML = option10;
+    message1.innerHTML = myQuestionsAnswers[parseInt(a)-1].question;
+    message2.innerHTML = myQuestionsAnswers[parseInt(a)-1].option;
     message3.innerHTML = "";
     questionNumber.innerHTML = a++;
     message4.innerHTML = "";
@@ -104,19 +119,51 @@ function next() {
     message2.innerHTML = "";
     message3.innerHTML = "";
     message4.innerHTML = "<button class=buttons onclick=repeat001()>Repeat</button>";
+    message5.innerHTML = "<button class=buttons onclick=viewHighScores()>View Highscores</button>";
 
     var initials = prompt("Please enter your initials.")
     console.log(initials);
     console.log(userScore.innerHTML);
 
-    localStorage.setItem("Score", userScore.innerHTML);
+    var currentScore = userScore.innerHTML;
+
+    localStorage.setItem("Score", currentScore);
     localStorage.setItem("Initials", initials);
-  }
+
+    var currentUserScore = {
+      initials: initials,
+      score: currentScore
+    }
+
+    if (!topScores) {
+      topScores = [];
+      topScores[0] = currentUserScore;
+    } else if ( currentScore < topScores[topScores.length -1].score) {
+      topScores.push(currentUserScore);
+    } else if ( currentScore > topScores[0].score) {
+      topScores.unshift(currentUserScore);
+    } else {
+      for (var i = 0; i < topScores.length; i++) {
+        if (currentScore === topScores[i].score) {
+          topScores.splice(i, 1, currentUserScore)
+        } else if (currentScore < topScores[i].score && currentScore > topScores[i + 1].score) {
+          topScores.splice(i, 0, currentUserScore)
+        }
+      }
+    }
+
+    if (topScores.length > 5) {
+      topScores.pop();
+    }
+
+    localStorage.setItem("topScores", JSON.stringify(topScores));
+    console.log(localStorage.getItem("topScores"));
+  } 
 }
 
 function timer() {
   c = c - 1;
-  if (c < 150) {
+  if (c < 15) {
     timeLeft.innerHTML = c;
   }
 
@@ -133,4 +180,12 @@ update = setInterval("timer()", 1000);
 
 function repeat001() {
   location.reload();
+}
+
+function viewHighScores() {
+  var currentHighScores = JSON.parse(localStorage.getItem("topScores"));
+  message5.innerHTML = "<div>Initials: .... Score:</div><br>";
+  for (var i = 0; i < currentHighScores.length; i++) {
+    message5.innerHTML = message5.innerHTML + "<div>" + currentHighScores[i].initials + " .... " + currentHighScores[i].score + "</div>";
+  }
 }
