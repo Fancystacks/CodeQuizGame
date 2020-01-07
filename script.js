@@ -1,34 +1,34 @@
 var myQuestionsAnswers = [
   {
     question: "It is good practice to put a large JavaScript edit within an HTML document.",
-    option: "<button class=testButtons onclick=qi()>True</button><br /><br /><button class=testButtons onclick=qc()>Falsec1</button>"
+    option: "<button class=testButtons onclick=qi()>True</button><br /><br /><button class=testButtons onclick=qc()>False</button>"
   }, {
     question: "HTML stands for Hypertext Markdown Language.",
-    option: "<button class=testButtons onclick=qc()>Falsec2</button><br /><br /><button class=testButtons onclick=qi()>True</button>"
+    option: "<button class=testButtons onclick=qc()>False</button><br /><br /><button class=testButtons onclick=qi()>True</button>"
   }, {
     question: "CSS is used to style and design HTML content.",
-    option: "<button class=testButtons onclick=qc()>Truec3</button><br /><br /><button class=testButtons onclick=qi()>False</button>"
+    option: "<button class=testButtons onclick=qc()>True</button><br /><br /><button class=testButtons onclick=qi()>False</button>"
   }, {
     question: "Local storage can only hold arrays and objects.",
-    option: "<button class=testButtons onclick=qi()>True</button><br /><br /><button class=testButtons onclick=qc()>Falsec4</button>"
+    option: "<button class=testButtons onclick=qi()>True</button><br /><br /><button class=testButtons onclick=qc()>False</button>"
   }, {
     question: "Vanilla JavaScript is the same thing as jQuery.",
-    option: "<button class=testButtons onclick=qc()>Falsec5</button><br /><br /><button class=testButtons onclick=qi()>True</button>"
+    option: "<button class=testButtons onclick=qc()>False</button><br /><br /><button class=testButtons onclick=qi()>True</button>"
   }, {
     question: "An boolean is an example of a data type in JavaScript.",
-    option: "<button class=testButtons onclick=qi()>False</button><br /><br /><button class=testButtons onclick=qc()>Truec6</button>"
+    option: "<button class=testButtons onclick=qi()>False</button><br /><br /><button class=testButtons onclick=qc()>True</button>"
   }, {
     question: "JavaScript is the de facto language of the web.",
-    option: "<button class=testButtons onclick=qc()>Truec7</button><br /><br /><button class=testButtons onclick=qi()>False</button>"
+    option: "<button class=testButtons onclick=qc()>True</button><br /><br /><button class=testButtons onclick=qi()>False</button>"
   }, {
     question: "All HTML components need a seperate closing tag.",
-    option: "<button class=testButtons onclick=qc()>Falsec8</button><br /><br /><button class=testButtons onclick=qi()>True</button>"
+    option: "<button class=testButtons onclick=qc()>False</button><br /><br /><button class=testButtons onclick=qi()>True</button>"
   }, {
     question: "!false actually means true.",
-    option: "<button class=testButtons onclick=qc()>Truec9</button><br /><br /><button class=testButtons onclick=qi()>False</button>"
+    option: "<button class=testButtons onclick=qc()>True</button><br /><br /><button class=testButtons onclick=qi()>False</button>"
   }, {
     question: "An asterisk is jQuery's calling card.",
-    option: "<button class=testButtons onclick=qi()>Truec10</button><br /><br /><button class=testButtons onclick=qc()>False</button>"
+    option: "<button class=testButtons onclick=qi()>True</button><br /><br /><button class=testButtons onclick=qc()>False</button>"
   }
 ]
 
